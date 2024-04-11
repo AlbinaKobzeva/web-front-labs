@@ -8,14 +8,19 @@ main {
     background-color: lavenderblush;
     color: rgb(69, 27, 72);
     font-family: Arial;
-    margin: 0px;
     padding: 20px;
+    margin: 0px 0px 80px;
 }
 footer {
     background-color: thistle;
     color: black;
     font-family: Arial;
     padding: 20px;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 header {
     background-color: thistle;
