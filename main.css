@@ -23,3 +23,23 @@ header {
     font-family: Arial;
     padding: 20px;
 }
+a:link {
+    text-decoration: underline;
+    opacity: 0.9;
+    text-shadow: 1px 1px 1px rgb(212, 182, 245);
+}
+
+a:visited {
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(230, 151, 151);
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
