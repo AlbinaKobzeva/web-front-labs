@@ -15,6 +15,14 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor() {
+            let author = 'Автор страницы:\nКобзева Альбина Алексеевна';
+            alert(author);
+        }
+        function showSms() {
+            let privet = 'Приветствую вас на моей страницы!';
+            alert(privet)
+        }
     </script>
     <style>
         .message {
@@ -28,20 +36,26 @@
             display: inline-block;
             cursor: pointer;
         }
+        .shapka {
+            cursor: pointer;
+        }
+        .sms {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header>
-        НГТУ, ФБ, Лабораторная работа 5
+    <header onclick="showAuthor()">
+        <div class="shapka">НГТУ, ФБ, Лабораторная работа 5</div>
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
-        &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
+    <footer class="sms" onclick="showSms()">
+        Кобзева Альбина, ФБИ-24, 2 курс, 2024
     </footer>
 </body>
 </html>
