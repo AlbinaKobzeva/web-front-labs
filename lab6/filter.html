@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтр товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        #wear {
+            width: 600px;
+            height: 500px;
+        }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if(color == 'Красный' && type == 'Футболка') {
+                wear.src = 'красная_футболка.jpeg';
+            }
+            if(color == 'Красный' && type == 'Поло') {
+                wear.src = 'красный_поло.jpeg';
+            }
+            if(color == 'Красный' && type == 'Майка') {
+                wear.src = 'красная_майка.jpeg';
+            }
+            if(color == 'Белый' && type == 'Футболка') {
+                wear.src = 'белая_футболка.jpeg';
+            }
+            if(color == 'Белый' && type == 'Поло') {
+                wear.src = 'белый_поло.jpeg';
+            }
+            if(color == 'Белый' && type == 'Майка') {
+                wear.src = 'белая_майка.jpeg';
+            }
+            if(color == 'Черный' && type == 'Футболка') {
+                wear.src = 'черная_футболка.jpeg';
+            }
+            if(color == 'Черный' && type == 'Поло') {
+                wear.src = 'черный_поло.jpeg';
+            }
+            if(color == 'Черный' && type == 'Майка') {
+                wear.src = 'черная_майка.jpeg';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    <main>
+        <div>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">OK</button><br>
+
+            <img id="wear">
+        </div>
+    </main>
+    <footer>
+        &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
