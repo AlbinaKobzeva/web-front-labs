@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перебор цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .block {
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 30px;
+            background: gold;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.5s; 
+        }        
+    </style>
+    <script>
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'gold') {
+                div.style.backgroundColor = 'red';
+                document.getElementById('color-name').innerHTML = 'красный';
+                div.style.color = 'white';
+            }
+            else if(div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'черный';
+                div.style.color = 'white';
+            }
+            else if(div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'pink';
+                document.getElementById('color-name').innerHTML = 'розовый';
+                div.style.color = 'black';
+            }
+            else if(div.style.backgroundColor == 'pink') {
+                div.style.backgroundColor = 'green';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+                div.style.color = 'white';
+            }
+            else {
+                div.style.backgroundColor = 'gold';
+                document.getElementById('color-name').innerHTML = 'золотой';
+                div.style.color = 'black';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    <main>
+        <div class="block" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name"></span><br>
+            Сделайте двойной щелчок,<br>
+            чтобы сменить цвет<br>
+        </div>
+    </main>
+    <footer>
+        &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
