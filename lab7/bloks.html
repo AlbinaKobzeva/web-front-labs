@@ -19,6 +19,26 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let width = 100; 
+            let numberOfBlocks = document.getElementById('numberOfBlocks').value;
+            for (let i = 0; i < numberOfBlocks; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'HotPink';
+                newBlock.style.height = '40px';
+                newBlock.style.border = 'solid';
+                newBlock.style.borderColor = 'black';
+                newBlock.style.borderRadius = '8px';
+                newBlock.style.margin = '5px';
+                newBlock.style.width = width + 'px'; 
+                width += 10; 
+                newBlock.innerHTML = `Блок № ${i + 1}: 2 * ${i}<sup>2</sup> = ${2 * i ** 2}`;
+                main.appendChild(newBlock);
+                
+            }
+        }
     </script>
 </head>
 <body>
@@ -27,6 +47,8 @@
     </header>
     <main>
         <button onclick="addNewBlock()">Добавить блок</button>
+        Введите чиcло: <input type="number" id="numberOfBlocks">
+        <button onclick="addNewBlocks()">Добавить блоки</button>
     </main>
     <footer>
         &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
