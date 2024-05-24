@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кобзева Альбина Алексеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        h2{
+            font-family: monospace;
+            font-size: 18px;
+            color: rgb(14, 22, 97);
+            
+        }
+        p{
+            font-family: monospace;
+            font-size: 18px;
+            color: rgb(14, 22, 97);
+            
+        }
+        .exchange-rate-info{
+            margin: 50px 750px;
+            width: 500px;
+
+        }
+        button{
+            margin: 0px 680px;
+            background-color: rgb(238, 204, 236);
+            width: 250px;
+            height: 50px;
+        }
+
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const currentRate = data.Valute.EUR.Value;
+                    const previousRate = data.Valute.EUR.Previous;
+                    const difference = currentRate - previousRate;
+                    const message = difference > 0 ? 'Курс евро поднялся' : 'Курс евро опустился';
+                    const rateInfo = `
+                        <div class="exchange-rate-info">
+                            <h2>Курс евро</h2>
+                            <p>Дата запроса: ${data.Date}</p>
+                            <p>Текущий курс: ${currentRate}</p>
+                            <p>Прошлый курс: ${previousRate}</p>
+                            <p>Разница: ${difference.toFixed(2)} (${message})</p>
+                        </div>
+                    `;
+                    document.getElementById('exchange-rate').innerHTML = rateInfo;
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="exchange-rate"></div>
+    </main>
+    <footer>
+        &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
