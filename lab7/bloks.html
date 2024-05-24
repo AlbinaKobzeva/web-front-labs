@@ -75,6 +75,26 @@
                 main.appendChild(newBlock);
             }
         }
+        function opacity_blocks() {
+            let opacity = 0;
+            let main = document.querySelector('main');
+            for(let i = 0; i<=10; i+=1){
+                let newBlock = document.createElement('div');
+                newBlock.innerHTML = `${i}`;
+                newBlock.style.width = '40px';
+                newBlock.style.height = '50px';
+                newBlock.style.opacity = opacity + '%'; 
+                opacity += 10; 
+
+                newBlock.style.margin = '5px'
+                newBlock.style.border = '1px solid'
+                newBlock.style.borderColor = 'black';
+                newBlock.style.backgroundColor = 'red';
+                newBlock.style.lineHeight = '20px'; 
+                newBlock.style.textAlign = 'center';
+                main.appendChild(newBlock);
+            }
+        }
     </script>
 </head>
 <body>
@@ -87,6 +107,7 @@
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()" class="circle-container" >10 => -80</button>
+        <button onclick="opacity_blocks()" >Полупрозрачные блоки</button>
     </main>
     <footer>
         &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
