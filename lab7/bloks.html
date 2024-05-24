@@ -53,6 +53,28 @@
                 main.appendChild(newBlock);
             }
         }
+        function add10_80() {
+            let main = document.querySelector('main');
+            // Создаем отступ перед кружками
+            let spacer = document.createElement('div');
+            spacer.style.clear = 'both'; // Очищаем обтекание для новой строки
+            main.appendChild(spacer);
+            for(let i = 10; i>=-80; i-=3){
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '50px';
+                newBlock.style.height = '50px';
+                newBlock.style.borderRadius = '50%';
+                newBlock.innerHTML = `${i}`;
+                newBlock.style.margin = '10px'
+                newBlock.style.border = '1px solid'
+                newBlock.style.borderColor = 'black';
+                newBlock.style.backgroundColor = 'AliceBlue';
+                newBlock.style.lineHeight = '20px'; 
+                newBlock.style.textAlign = 'center';
+                newBlock.style.display = 'inline-block'; 
+                main.appendChild(newBlock);
+            }
+        }
     </script>
 </head>
 <body>
@@ -64,6 +86,7 @@
         Введите чиcло: <input type="number" id="numberOfBlocks">
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
+        <button onclick="add10_80()" class="circle-container" >10 => -80</button>
     </main>
     <footer>
         &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
