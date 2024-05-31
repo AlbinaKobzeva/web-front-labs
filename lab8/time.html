@@ -19,7 +19,6 @@
             padding-left: 10px;
             float: right;
         }
-        
         .textTime {
             padding-top: 25px;
             text-align: center;
@@ -35,6 +34,64 @@
             color: black;
             text-align: center;
         }
+
+        #clock {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #4d1339;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        #second-hand, #minute-hand, #hour-hand {
+            background-color: #4c1e3f;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            transform: translateX(-50%) rotate(0deg);
+        }
+        #second-hand {
+            height: 90px;
+            width: 2px;
+            background-color: rgb(57, 19, 57);
+            border-radius: 10px;
+            transform-origin: bottom center;
+        }
+        #minute-hand {
+            height: 80px;
+            width: 3px;
+            border-radius: 10px;
+            transform-origin: bottom center;
+        }
+        #hour-hand {
+            height: 60px;
+            width: 5px;
+            border-radius: 10px;
+            transform-origin: bottom center;
+        }
+        
+        .tick {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: #350e26;
+            top: 90px;
+            left: 50%;
+            transform-origin: bottom center;
+        }
+        .number {
+            position: absolute;
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            top: 90px;
+            left: 50%;
+            transform-origin: center center;
+        }
     </style>
 </head>
 <body onload="showTime()">
@@ -46,6 +103,37 @@
             <div id="time" class="textTime">00:00:00</div>
         </div>
         <div id="seconds">00</div>
+        <div id="clock">
+            <div id="second-hand"></div>
+            <div id="minute-hand"></div>
+            <div id="hour-hand"></div>
+            
+            <div class="tick" style="transform: translateX(-50%) rotate(0deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(30deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(60deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(90deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(120deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(150deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(180deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(210deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(240deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(270deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(300deg) translateY(-90px);"></div>
+            <div class="tick" style="transform: translateX(-50%) rotate(330deg) translateY(-90px);"></div>
+            
+            <div class="number" style="transform: translateX(-50%) rotate(0deg) translateY(-80px);">12</div>
+            <div class="number" style="transform: translateX(-50%) rotate(30deg) translateY(-80px);">1</div>
+            <div class="number" style="transform: translateX(-50%) rotate(60deg) translateY(-80px);">2</div>
+            <div class="number" style="transform: translateX(-50%) rotate(90deg) translateY(-80px);">3</div>
+            <div class="number" style="transform: translateX(-50%) rotate(120deg) translateY(-80px);">4</div>
+            <div class="number" style="transform: translateX(-50%) rotate(150deg) translateY(-80px);">5</div>
+            <div class="number" style="transform: translateX(-50%) rotate(180deg) translateY(-80px);">6</div>
+            <div class="number" style="transform: translateX(-50%) rotate(210deg) translateY(-80px);">7</div>
+            <div class="number" style="transform: translateX(-50%) rotate(240deg) translateY(-80px);">8</div>
+            <div class="number" style="transform: translateX(-50%) rotate(270deg) translateY(-80px);">9</div>
+            <div class="number" style="transform: translateX(-50%) rotate(300deg) translateY(-80px);">10</div>
+            <div class="number" style="transform: translateX(-50%) rotate(330deg) translateY(-80px);">11</div>
+        </div>
     </main>
     <footer>
         &copy; Кобзева Альбина, ФБИ-24, 2 курс, 2024
